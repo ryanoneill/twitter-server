@@ -10,7 +10,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /** Navigation */
-#wrapper {
+#app{
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -18,7 +18,7 @@ h1,h2,h3,h4,h5,h6 {
   transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
+#app.toggled {
   margin-left: -250px;
 }
 
@@ -62,7 +62,7 @@ h1,h2,h3,h4,h5,h6 {
   background-color: #2972B1;
 }
 
-#wrapper.toggled #toggle {
+#app.toggled #toggle {
   left: 0;
 }
 
