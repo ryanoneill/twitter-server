@@ -2,14 +2,14 @@ import React from 'react';
 
 export function Content(props) {
   return (
-    <div id="contents" class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <script type="application/javascript" src="/admin/files/js/summary.js"></script>
-          <link type="text/css" href="/admin/files/css/summary.css" rel="stylesheet"></link>
-          <div id="process-info" class="text-center well well-sm" data-refresh-uri="/admin/metrics">
-            <ul class="list-inline">
-              <li><span class="glyphicon glyphicon-info-sign"/></li>
+    <div id="contents" className="container-fluid">
+      <div className="row">
+        <div className="col-md-12">
+          <script type="application/javascript" src="src/js/summary.js"></script>
+          <link type="text/css" href="styles/summary.css" rel="stylesheet"></link>
+          <div id="process-info" className="text-center well well-sm" data-refresh-uri="/admin/metrics">
+            <ul className="list-inline">
+              <li><span className="glyphicon glyphicon-info-sign"/></li>
               <li data-key="jvm/uptime">
                 <div>
                   <a href="/admin/metrics#jvm/uptime">jvm/uptime:</a>
