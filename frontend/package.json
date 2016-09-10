@@ -4,6 +4,7 @@
   "description": "React UI for Twitter Server",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
