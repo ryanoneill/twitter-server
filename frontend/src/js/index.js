@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#toggle").click(function(e) {
     e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
+    $("#app").toggleClass("toggled");
     $("#toggle span").toggleClass("glyphicon-chevron-right");
   })
 
