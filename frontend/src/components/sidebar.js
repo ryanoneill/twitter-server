@@ -1,6 +1,48 @@
 import React from 'react';
+import { SidebarMenuItem } from './sidebar_menu_item';
 
 export function Sidebar(props) {
+  const perftracer_item = {
+    link: "/admin/clients/perftracer",
+    id: "perftracer",
+    name: "perftracer"
+  };
+  const zipkin_item = {
+    link: "/admin/clients/zipkin-tracer",
+    id: "zipkin-tracer",
+    name: "zipkin-tracer"
+  };
+  const adminhttp_item = {
+    link: "/admin/servers/adminhttp",
+    id: "adminhttp",
+    name: "adminhttp"
+  };
+  const http_item = {
+    link: "/admin/servers/http",
+    id: "http",
+    name: "http"
+  };
+  const watch_item = {
+    link: "/admin/metrics",
+    id: "Watch",
+    name: "Watch"
+  };
+  const histograms_item = {
+    link: "/admin/histograms",
+    id: "Histograms",
+    name: "Histograms"
+  };
+  const per_host_item = {
+    link: "/admin/per_host_metrics.json",
+    id: "/admin/per_host_metrics.json",
+    name: "/admin/per_host_metrics.json"
+  };
+  const pretty_item = {
+    link: "/admin/metrics.json?pretty=true",
+    id: "/admin/metrics.json",
+    name: "/admin/metrics.json"
+  };
+
   return (
       <nav id="sidebar">
         <ul>
@@ -16,17 +58,8 @@ export function Sidebar(props) {
               <span>Downstream Clients</span>
             </div>
             <ul>
-              <a href="/admin/clients/perftracer">
-                <li id="perftracer" className="selectable ">
-                  perftracer
-                </li>
-              </a>
-
-              <a href="/admin/clients/zipkin-tracer">
-                <li id="zipkin-tracer" className="selectable ">
-                  zipkin-tracer
-                </li>
-              </a>
+              <SidebarMenuItem item={perftracer_item} />
+              <SidebarMenuItem item={zipkin_item} />
             </ul>
           </li>
           <li className="subnav ">
@@ -35,17 +68,8 @@ export function Sidebar(props) {
               <span>Listening Servers</span>
             </div>
             <ul>
-              <a href="/admin/servers/adminhttp">
-                <li id="adminhttp" className="selectable ">
-                  adminhttp
-                </li>
-              </a>
-
-              <a href="/admin/servers/http">
-                <li id="http" className="selectable ">
-                  http
-                </li>
-              </a>
+              <SidebarMenuItem item={adminhttp_item} />
+              <SidebarMenuItem item={http_item} />
             </ul>
           </li>
           <li className="subnav ">
@@ -54,29 +78,10 @@ export function Sidebar(props) {
               <span>Metrics</span>
             </div>
             <ul>
-              <a href="/admin/metrics">
-                <li id="Watch" className="selectable ">
-                  Watch
-                </li>
-              </a>
-
-              <a href="/admin/histograms">
-                <li id="Histograms" className="selectable ">
-                  Histograms
-                </li>
-              </a>
-
-              <a href="/admin/per_host_metrics.json">
-                <li id="/admin/per_host_metrics.json" className="selectable ">
-                  /admin/per_host_metrics.json
-                </li>
-              </a>
-
-              <a href="/admin/metrics.json?pretty=true">
-                <li id="/admin/metrics.json" className="selectable ">
-                  /admin/metrics.json
-                </li>
-              </a>
+              <SidebarMenuItem item={watch_item} />
+              <SidebarMenuItem item={histograms_item} />
+              <SidebarMenuItem item={per_host_item} />
+              <SidebarMenuItem item={pretty_item} />
             </ul>
           </li>
           <li className="subnav ">
