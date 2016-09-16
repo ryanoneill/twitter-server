@@ -82,159 +82,161 @@ export function Sidebar(props) {
     id: "Blocked Profile",
     name: "Blocked Profile"
   };
+  const build_item = {
+    link: { url: "/admin/server_info", method: "get" },
+    id: "Build Properties",
+    name: "Build Properties"
+  };
+  const lint_item = {
+    link: { url: "/admin/lint", method: "get" },
+    id: "Lint",
+    name: "Lint"
+  };
+  const threads_item = {
+    link: { url: "/admin/threads", method: "get" },
+    id: "Threads",
+    name: "Threads"
+  };
+  const announcer_item = {
+    link: { url: "/admin/announcer", method: "get" },
+    id: "Announcer",
+    name: "Announcer"
+  };
+  const dtab_item = {
+    link: { url: "/admin/dtab", method: "get" },
+    id: "Dtab",
+    name: "Dtab"
+  };
+  const registry_item = {
+    link: { url: "/admin/registry.json", method: "get" },
+    id: "Registry",
+    name: "Registry"
+  };
+  const toggles_item = {
+    link: { url: "/admin/toggles", method: "get" },
+    id: "Toggles",
+    name: "Toggles"
+  };
+  const ping_item = {
+    link: { url: "/admin/ping", method: "get" },
+    id: "Ping",
+    name: "Ping"
+  };
+  const shutdown_item = {
+    link: { url: "/admin/shutdown", method: "get" },
+    id: "Shutdown",
+    name: "Shutdown"
+  };
+  const tracing_item = {
+    link: { url: "/admin/tracing", method: "get" },
+    id: "Tracing",
+    name: "Tracing"
+  };
+  const events_item = {
+    link: { url: "/admin/events", method: "get" },
+    id: "Events",
+    name: "Events"
+  };
+  const logging_item = {
+    link: { url: "/admin/logging", method: "get" },
+    id: "Logging",
+    name: "Logging"
+  };
 
   return (
-      <nav id="sidebar">
-        <ul>
-          <a href="/admin">
-            <li id="Summary" className="selectable selected">
-              Summary
-            </li>
-          </a>
+    <nav id="sidebar">
+      <ul>
+        <a href="/admin">
+          <li id="Summary" className="selectable selected">
+            Summary
+          </li>
+        </a>
 
-          <li className="subnav ">
-            <div className="subnav-title selectable">
-              <span className="glyphicon glyphicon-expand "></span>
-              <span>Downstream Clients</span>
-            </div>
-            <ul>
-              <SidebarMenuItem item={perftracer_item} />
-              <SidebarMenuItem item={zipkin_item} />
-            </ul>
-          </li>
-          <li className="subnav ">
-            <div className="subnav-title selectable">
-              <span className="glyphicon glyphicon-expand "></span>
-              <span>Listening Servers</span>
-            </div>
-            <ul>
-              <SidebarMenuItem item={adminhttp_item} />
-              <SidebarMenuItem item={http_item} />
-            </ul>
-          </li>
-          <li className="subnav ">
-            <div className="subnav-title selectable">
-              <span className="glyphicon glyphicon-expand "></span>
-              <span>Metrics</span>
-            </div>
-            <ul>
-              <SidebarMenuItem item={watch_item} />
-              <SidebarMenuItem item={histograms_item} />
-              <SidebarMenuItem item={per_host_item} />
-              <SidebarMenuItem item={pretty_item} />
-            </ul>
-          </li>
-          <li className="subnav ">
-            <div className="subnav-title selectable">
-              <span className="glyphicon glyphicon-expand "></span>
-              <span>Misc</span>
-            </div>
-            <ul>
-              <SidebarMenuItem item={perfgraph_item} />
-              <SidebarMenuItem item={abort_item} />
-              <SidebarMenuItem item={quit_item} />
-              <SidebarMenuItem item={health_item} />
-            </ul>
-          </li>
-          <li className="subnav ">
-            <div className="subnav-title selectable">
+        <li className="subnav ">
+          <div className="subnav-title selectable">
             <span className="glyphicon glyphicon-expand "></span>
-            <span>Performance Profile</span>
-            </div>
-            <ul>
-              <SidebarMenuItem item={contention_item} />
-              <SidebarMenuItem item={heap_item} />
-              <SidebarMenuItem item={profile_item} />
-              <SidebarMenuItem item={blocked_item} />
-            </ul>
-          </li>
-          <li className="subnav ">
-            <div className="subnav-title selectable">
-              <span className="glyphicon glyphicon-expand "></span>
-              <span>Process Info</span>
-            </div>
-            <ul>
-              <a href="/admin/server_info">
-                <li id="Build Properties" className="selectable ">
-                  Build Properties
-                </li>
-              </a>
-
-              <a href="/admin/lint">
-                <li id="Lint" className="selectable ">
-                  Lint
-                </li>
-              </a>
-
-              <a href="/admin/threads">
-                <li id="Threads" className="selectable ">
-                  Threads
-                </li>
-              </a>
-
-              <a href="/admin/announcer">
-                <li id="Announcer" className="selectable ">
-                  Announcer
-                </li>
-              </a>
-
-              <a href="/admin/dtab">
-                <li id="Dtab" className="selectable ">
-                  Dtab
-                </li>
-              </a>
-
-              <a href="/admin/registry.json">
-                <li id="Registry" className="selectable ">
-                  Registry
-                </li>
-              </a>
-
-              <a href="/admin/toggles">
-                <li id="Toggles" className="selectable ">
-                  Toggles
-                </li>
-              </a>
-            </ul>
-          </li>
-          <li className="subnav ">
-            <div className="subnav-title selectable">
-              <span className="glyphicon glyphicon-expand "></span>
-              <span>Utilities</span>
-            </div>
-            <ul>
-              <a href="/admin/ping">
-                <li id="Ping" className="selectable ">
-                  Ping
-                </li>
-              </a>
-
-              <a href="/admin/shutdown">
-                <li id="Shutdown" className="selectable ">
-                  Shutdown
-                </li>
-              </a>
-
-              <a href="/admin/tracing">
-                <li id="Tracing" className="selectable ">
-                  Tracing
-                </li>
-              </a>
-
-              <a href="/admin/events">
-                <li id="Events" className="selectable ">
-                  Events
-                </li>
-              </a>
-
-              <a href="/admin/logging">
-                <li id="Logging" className="selectable ">
-                  Logging
-                </li>
-              </a>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      );
+            <span>Downstream Clients</span>
+          </div>
+          <ul>
+            <SidebarMenuItem item={perftracer_item} />
+            <SidebarMenuItem item={zipkin_item} />
+          </ul>
+        </li>
+        <li className="subnav ">
+          <div className="subnav-title selectable">
+            <span className="glyphicon glyphicon-expand "></span>
+            <span>Listening Servers</span>
+          </div>
+          <ul>
+            <SidebarMenuItem item={adminhttp_item} />
+            <SidebarMenuItem item={http_item} />
+          </ul>
+        </li>
+        <li className="subnav ">
+          <div className="subnav-title selectable">
+            <span className="glyphicon glyphicon-expand "></span>
+            <span>Metrics</span>
+          </div>
+          <ul>
+            <SidebarMenuItem item={watch_item} />
+            <SidebarMenuItem item={histograms_item} />
+            <SidebarMenuItem item={per_host_item} />
+            <SidebarMenuItem item={pretty_item} />
+          </ul>
+        </li>
+        <li className="subnav ">
+          <div className="subnav-title selectable">
+            <span className="glyphicon glyphicon-expand "></span>
+            <span>Misc</span>
+          </div>
+          <ul>
+            <SidebarMenuItem item={perfgraph_item} />
+            <SidebarMenuItem item={abort_item} />
+            <SidebarMenuItem item={quit_item} />
+            <SidebarMenuItem item={health_item} />
+          </ul>
+        </li>
+        <li className="subnav ">
+          <div className="subnav-title selectable">
+          <span className="glyphicon glyphicon-expand "></span>
+          <span>Performance Profile</span>
+          </div>
+          <ul>
+            <SidebarMenuItem item={contention_item} />
+            <SidebarMenuItem item={heap_item} />
+            <SidebarMenuItem item={profile_item} />
+            <SidebarMenuItem item={blocked_item} />
+          </ul>
+        </li>
+        <li className="subnav ">
+          <div className="subnav-title selectable">
+            <span className="glyphicon glyphicon-expand "></span>
+            <span>Process Info</span>
+          </div>
+          <ul>
+            <SidebarMenuItem item={build_item} />
+            <SidebarMenuItem item={lint_item} />
+            <SidebarMenuItem item={threads_item} />
+            <SidebarMenuItem item={announcer_item} />
+            <SidebarMenuItem item={dtab_item} />
+            <SidebarMenuItem item={registry_item} />
+            <SidebarMenuItem item={toggles_item} />
+          </ul>
+        </li>
+        <li className="subnav ">
+          <div className="subnav-title selectable">
+            <span className="glyphicon glyphicon-expand "></span>
+            <span>Utilities</span>
+          </div>
+          <ul>
+            <SidebarMenuItem item={ping_item} />
+            <SidebarMenuItem item={shutdown_item} />
+            <SidebarMenuItem item={tracing_item} />
+            <SidebarMenuItem item={events_item} />
+            <SidebarMenuItem item={logging_item} />
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  );
 }
