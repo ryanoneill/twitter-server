@@ -3,44 +3,84 @@ import { SidebarMenuItem } from './sidebar_menu_item';
 
 export function Sidebar(props) {
   const perftracer_item = {
-    link: "/admin/clients/perftracer",
+    link: { url: "/admin/clients/perftracer", method: "get" },
     id: "perftracer",
     name: "perftracer"
   };
   const zipkin_item = {
-    link: "/admin/clients/zipkin-tracer",
+    link: { url: "/admin/clients/zipkin-tracer", method: "get" },
     id: "zipkin-tracer",
     name: "zipkin-tracer"
   };
   const adminhttp_item = {
-    link: "/admin/servers/adminhttp",
+    link: { url: "/admin/servers/adminhttp", method: "get" },
     id: "adminhttp",
     name: "adminhttp"
   };
   const http_item = {
-    link: "/admin/servers/http",
+    link: { url: "/admin/servers/http", method: "get" },
     id: "http",
     name: "http"
   };
   const watch_item = {
-    link: "/admin/metrics",
+    link: { url: "/admin/metrics", method: "get" },
     id: "Watch",
     name: "Watch"
   };
   const histograms_item = {
-    link: "/admin/histograms",
+    link: { url: "/admin/histograms", method: "get" },
     id: "Histograms",
     name: "Histograms"
   };
   const per_host_item = {
-    link: "/admin/per_host_metrics.json",
+    link: { url: "/admin/per_host_metrics.json", method: "get" },
     id: "/admin/per_host_metrics.json",
     name: "/admin/per_host_metrics.json"
   };
   const pretty_item = {
-    link: "/admin/metrics.json?pretty=true",
+    link: { url: "/admin/metrics.json?pretty=true", method: "get" },
     id: "/admin/metrics.json",
     name: "/admin/metrics.json"
+  };
+  const perfgraph_item = {
+    link: { url: "/admin/perfgraph", method: "get" },
+    id: "/admin/perfgraph",
+    name: "/admin/perfgraph"
+  };
+  const abort_item = {
+    link: { url: "/abortabortabort", method: "post" },
+    id: "/abortabortabort",
+    name: "/abortabortabort"
+  };
+  const quit_item = {
+    link: { url: "/quitquitquit", method: "post" },
+    id: "/quitquitquit",
+    name: "/quitquitquit"
+  };
+  const health_item = {
+    link: { url: "/health", method: "get" },
+    id: "/health",
+    name: "/health"
+  };
+  const contention_item = {
+    link: { url: "/admin/contention", method: "get" },
+    id: "Contention",
+    name: "Contention"
+  };
+  const heap_item = {
+    link: { url: "/admin/pprof/heap", method: "get" },
+    id: "Heap",
+    name: "Heap"
+  };
+  const profile_item = {
+    link: { url: "/admin/pprof/profile", method: "get" },
+    id: "Profile",
+    name: "Profile"
+  };
+  const blocked_item = {
+    link: { url: "/admin/pprof/contention", method: "get" },
+    id: "Blocked Profile",
+    name: "Blocked Profile"
   };
 
   return (
@@ -90,33 +130,10 @@ export function Sidebar(props) {
               <span>Misc</span>
             </div>
             <ul>
-              <a href="/admin/perfgraph">
-                <li id="/admin/perfgraph" className="selectable ">
-                  /admin/perfgraph
-                </li>
-              </a>
-
-              <form method="post" id="/abortabortabort-form" action="/abortabortabort">
-                <a href="#" onClick="document.getElementById('/abortabortabort-form').submit()">
-                  <li id="/abortabortabort" className="selectable ">
-                    /abortabortabort
-                  </li>
-                </a>
-              </form>
-
-              <form method="post" id="/quitquitquit-form" action="/quitquitquit">
-                <a href="#" onClick="document.getElementById('/quitquitquit-form').submit()">
-                  <li id="/quitquitquit" className="selectable ">
-                    /quitquitquit
-                  </li>
-                </a>
-              </form>
-
-              <a href="/health">
-                <li id="/health" className="selectable ">
-                  /health
-                </li>
-              </a>
+              <SidebarMenuItem item={perfgraph_item} />
+              <SidebarMenuItem item={abort_item} />
+              <SidebarMenuItem item={quit_item} />
+              <SidebarMenuItem item={health_item} />
             </ul>
           </li>
           <li className="subnav ">
@@ -125,29 +142,10 @@ export function Sidebar(props) {
             <span>Performance Profile</span>
             </div>
             <ul>
-              <a href="/admin/contention">
-                <li id="Contention" className="selectable ">
-                  Contention
-                </li>
-              </a>
-
-              <a href="/admin/pprof/heap">
-                <li id="Heap" className="selectable ">
-                  Heap
-                </li>
-              </a>
-
-              <a href="/admin/pprof/profile">
-                <li id="Profile" className="selectable ">
-                  Profile
-                </li>
-              </a>
-
-              <a href="/admin/pprof/contention">
-                <li id="Blocked Profile" className="selectable ">
-                  Blocked Profile
-                </li>
-              </a>
+              <SidebarMenuItem item={contention_item} />
+              <SidebarMenuItem item={heap_item} />
+              <SidebarMenuItem item={profile_item} />
+              <SidebarMenuItem item={blocked_item} />
             </ul>
           </li>
           <li className="subnav ">
